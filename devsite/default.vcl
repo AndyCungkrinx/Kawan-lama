@@ -12,10 +12,9 @@ backend default {
         .first_byte_timeout = 600s;
 }
 
-#allow localhost & IP BO
+#allow localhost
 acl purge {
         "127.0.0.1/32";
-        "192.168.8.36/32";
 }
 
 sub vcl_recv {

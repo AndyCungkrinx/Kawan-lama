@@ -1,5 +1,11 @@
 #!/bin/bash
 echo "=============================================
+--------------- Create User -----------------
+============================================="
+adduser icube
+usermod -aG sudo icube
+
+echo "=============================================
 --------------- Install Nginx ---------------
 ============================================="
 yum update -y
@@ -21,6 +27,10 @@ tar -zxvf ioncube_loaders_lin_x86*
 cp ioncube/ioncube_loader_lin_7.1.so /usr/lib64/php/modules/ioncube_loader_lin_7.1.so
 cd ../Kawan-lama
 systemctl enable php-fpm
+chown icube:icube -R /var/lib/php
+chmod 775 -R /var/lib/php/session/
+chown icube:icube -R /var/lib/nginx
+
 
 echo "=============================================
 --------------- Install Varnish -------------
