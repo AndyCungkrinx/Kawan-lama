@@ -1,0 +1,12 @@
+# mirasz@icube.us
+# /home/mage2user/.my.cnf: Managed by swift-express
+
+[client]
+user = root
+password = Icube328!
+host = "127.0.0.1"
+
+[mysqldump]
+user = root
+password = Icube328!
+host = "127.0.0.1"

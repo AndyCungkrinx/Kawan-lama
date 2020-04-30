@@ -1,0 +1,79 @@
+# mirasz@icube.us
+# /etc/mysql/my.cnf: Managed by swift-express
+
+[mysql]
+
+# CLIENT #
+port                            = 3306
+
+[mysqld]
+
+# GENERAL #
+user                            = mysql
+pid-file                        = /var/run/mysqld/mysqld.pid
+
+# MyISAM #
+key-buffer-size                 = 128M
+
+# SAFETY #
+max-allowed-packet              = 1024M
+max-connect-errors              = 1000000
+skip-name-resolve
+
+# DATA STORAGE #
+datadir                         = /var/lib/mysql/
+
+# BINARY LOGGING - enabled only if database replication implemented #
+#log-bin                         = /var/lib/mysql/{{ansible_hostname}}-bin
+#expire-logs-days                = 10
+#sync-binlog                     = 1
+#server-id                       = 1
+#max-binlog-size                 = 100M
+#binlog-format                   = STATEMENT
+
+# CACHES AND LIMITS #
+tmp-table-size                  = 32M
+max-heap-table-size             = 32M
+query-cache-type                = 1
+query-cache-size                = 128M
+query-cache-limit               = 16M
+max-connections                 = 1000
+thread-cache-size               = 50
+open-files-limit                = 65355
+table-definition-cache          = 4096
+table-open-cache                = 2048
+
+# INNODB #
+innodb-flush-method             = O_DIRECT
+innodb-log-files-in-group       = 2
+innodb-log-file-size            = 256M
+innodb-flush-log-at-trx-commit  = 1
+innodb-file-per-table           = 1
+innodb-buffer-pool-size         = 2G
+innodb-lock-wait-timeout        = 300
+
+# TIMEOUT #
+net_read_timeout                = 300
+net_write_timeout               = 300
+thread_pool_idle_timeout        = 300
+
+# LOGGING #
+log-error                       = /var/log/mysql/M2KWIDBPRD-error.log
+log-queries-not-using-indexes   = 0
+slow-query-log                  = 1
+slow-query-log-file             = /var/lib/mysql/M2KWIDBPRD-slow.log
+
+# TRIGGER #
+log_bin_trust_function_creators = 1
+
+#
+# The Percona Server 5.7 configuration file.
+#
+#
+# * IMPORTANT: Additional settings that can override those from this file!
+#   The files must end with '.cnf', otherwise they'll be ignored.
+#   Please make any edits and changes to the appropriate sectional files
+#   included below.
+#
+!includedir /etc/my.cnf.d/
+!includedir /etc/percona-server.conf.d/

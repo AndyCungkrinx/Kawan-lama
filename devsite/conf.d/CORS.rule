@@ -1,0 +1,19 @@
+# mirasz@icube.us
+# conf.d/CORS.rule: Managed by swift-express.
+
+# CORS
+add_header 'Access-Control-Allow-Origin' '*';
+add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+add_header 'Access-Control-Expose-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+add_header 'Access-Control-Max-Age' 1728000;
+
+# Called in:
+# location / {
+# location /pub/ {
+# location /static/ {
+#       location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+#       location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+# location /media/ {
+#       location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+#       location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
