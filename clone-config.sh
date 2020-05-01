@@ -2,12 +2,11 @@
 echo "=============================================
 --------------- Config Nginx ----------------
 ============================================="
+mkdir /etc/nginx/{sites-available,sites-enabled}
 rm -rf /etc/nginx/conf.d/*
 cp -r devsite/conf.d/* /etc/nginx/conf.d/.
-rm -rf /etc/nginx.conf
-cp devsite/nginx.conf /etc/nginx.conf
-unlink /etc/nginx/default
-rm -rf /etc/nginx/sites-available/default
+rm -rf /etc/nginx/nginx.conf
+cp devsite/nginx.conf /etc/nginx/nginx.conf
 cp devsite/varnish.conf /etc/nginx/sites-available/varnish.conf
 ln -s /etc/nginx/sites-available/varnish.conf /etc/nginx/sites-enabled/
 systemctl restart nginx
@@ -49,13 +48,15 @@ echo "=============================================
 cp devsite/.my.cnf /home/icube/
 cp devsite/.my-root.cnf ~/.my.cnf
 cp devsite/.my-mysql.cnf /etc/my.cnf
+mkdir /etc/percona-server.conf.d/
 systemctl restart mysql
 
 echo "=============================================
 -------------- Config PHP  ------------------
 ============================================="
-cp php.ini /etc/php.ini
+cp devsite/php.ini /etc/php.ini
 rm -rf /etc/php-fpm.d/www.conf
 cp devsite/php-fpm.d/icube.conf /etc/php-fpm.d/
 rm -rf /etc/php-fpm.conf
 cp devsite/php-fpm.conf /etc/php-fpm.conf
+systemctl restart php-fpm

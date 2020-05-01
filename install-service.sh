@@ -50,16 +50,22 @@ systemctl enable redis
 echo "=============================================
 -------------- Install Composer -------------
 ============================================="
-yum install curl -yum
+yum install curl -y
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-chmod +x /usr/local/bin/composer
+mv composer.phar /usr/bin/composer
+chmod +x /usr/bin/composer
 
 echo "=============================================
 --------------- Install MYSQL ---------------
 ============================================="
-yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm -y
-yum repolist
-yum install Percona-Server-server-57 -y
-mysql_secure_installation
-systemctl enable mysqld
+yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+yum makecache fast
+yum install -y Percona-XtraDB-Cluster-57
+systemctl enable --now mysql.service
+
+echo "=============================================
+- Please manually set password for root user -
+- Using mysql -u root -p 
+- Temporary password at here:
+============================================="
+grep 'temporary password' /var/log/mysqld.log
