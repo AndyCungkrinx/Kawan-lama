@@ -11,6 +11,7 @@ This repo for config server KL
  - git checkout Devsite-V1.0
  - chmod +x install-service.sh
  - chmod +x clone-config.sh
+ - chmod +x install-magento.sh
  - ./install-service.sh
  - ./clone-config.sh
  
