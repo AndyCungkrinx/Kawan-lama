@@ -40,5 +40,4 @@ bin/magento setup:install \
  --use-rewrites=1
 
 chown icube:icube /var/public/ -R
-chmod 777 var/ pub/ generated/ -R
 exit
