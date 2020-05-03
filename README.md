@@ -2,7 +2,6 @@
 This repo for config server KL
 
 # How to Use
-<hr>
 1. useradd icube
 2. passwd icube (make sure remember the password and you can make this same for another server).
 3. usermod -aG wheel icube
@@ -29,8 +28,7 @@ GRANT ALL PRIVILEGES ON magento2.* TO 'icube'@'127.0.0.1' IDENTIFIED BY 'Icube12
 FLUSH PRIVILEGES;
 exit
 
-<h3>Next Step</h3>
-<hr>
+# Next Step
  - ./install-magento.sh
  - 
   
