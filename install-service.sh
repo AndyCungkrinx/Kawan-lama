@@ -3,20 +3,19 @@ echo "=============================================
 --------------- Create User -----------------
 ============================================="
 adduser icube
-usermod -aG sudo icube
+usermod -aG wheel icube
+
+yum install epel-release yum-utils wget -y
 
 echo "=============================================
 --------------- Install Nginx ---------------
 ============================================="
-yum update -y
-yum install epel-release -y
 yum install nginx -y
 systemctl enable nginx
 
 echo "=============================================
 --------------- Install PHP7.1 --------------
 ============================================="
-yum install epel-release yum-utils wget -y
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 yum-config-manager --enable remi-php71
 yum install php-fpm php-mcrypt php-curl php-cli php-mysql php-gd php-xsl php-json php-intl php-pear php-devel php-mbstring php-zip php-soap -y
