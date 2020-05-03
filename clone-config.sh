@@ -38,7 +38,6 @@ sysctl vm.overcommit_memory=1
 sysctl -w net.core.somaxconn=65535
 systemctl restart redis
 EOL
-ln -s /etc/rc.d/rc.local /etc/rc.local
 chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 
@@ -48,7 +47,6 @@ echo "=============================================
 cp devsite/.my.cnf /home/icube/
 cp devsite/.my-root.cnf ~/.my.cnf
 cp devsite/.my-mysql.cnf /etc/my.cnf
-mkdir /etc/percona-server.conf.d/
 systemctl restart mysql
 
 echo "=============================================
