@@ -1,16 +1,17 @@
 #!/bin/bash
 #variable default
-server_name="http://local.magento2.test"
-db-host="127.0.0.1"
-db-name="m2_webapp"
-db-user="icube"
-db-pass="Icube123!"
-mg-pass="kawanlama123!"
+SERVER_NAME="http://local.magento2.test"
+DB_HOST="127.0.0.1"
+DB_NAME="m2_webapp"
+DB_USER="icube"
+DB_PASS="Icube123!"
+MG_PASS="kawanlama123!"
 
 
 echo "=============================================
 -------------- Install Magento --------------
 ============================================="
+su icube
 cd /var/public/releases/
 git clone https://github.com/AndyCungkrinx/magento2.git
 cd magento2
@@ -23,20 +24,21 @@ chown icube:icube /var/public/ -R
 #magento config
 bin/magento setup:install \
  --cleanup-database \
- --base-url=$server_name \
- --db-host=$db-host \
- --db-name=$db-name \
- --db-user=$db-user \
- --db-password=$db-pass \
+ --base-url=$SERVER_NAME \
+ --db-host=$DB_HOST \
+ --db-name=$DB_NAME \
+ --db-user=$DB_USER\
+ --db-password=$DB_PASS \
  --backend-frontname=klbackoffice \
  --admin-firstname=Kawanlama\
  --admin-lastname=Administrator \
  --admin-email=andy@icube.us \
  --admin-user=admin \
- --admin-password=$mg-pass \
+ --admin-password=$MG_PASS \
  --language=id_ID \
  --currency=IDR \
  --timezone=Asia/Bangkok \
  --use-rewrites=1
-chown icube:icube /var/public/ -R
+
 chmod 777 var/ pub/ generated/ -R
+exit
