@@ -14,6 +14,9 @@ This repo for config server KL
  - chmod +x install-magento.sh
  - ./install-service.sh
  - ./clone-config.sh
+ 
+ <h4>Note</h4>
+ - Edit /etc/nginx/conf.d/fastcgi-fpm.conf (comment line HTTPS for disable https if only use http)
 
 # Configure MYSQL Client
 - Edit /home/root/.my.cnf
