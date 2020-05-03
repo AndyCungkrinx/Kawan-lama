@@ -14,8 +14,16 @@ This repo for config server KL
  - chmod +x install-magento.sh
  - ./install-service.sh
  - ./clone-config.sh
- 
+
+# Configure MYSQL Client
+- Edit /home/root/.my.cnf
+- Edit /home/icube/.my.cnf
+- Edit /etc/nginx/sites-enabled/varnish.conf
+
+For MYSQL make sure set host 127.0.0.1 if you run DB in same server (for security reason).
+
 # Install Magento
+<h3>Creating Mysql Access </h3>
 mysql -u root -p <br>
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'Icube328!';<br>
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' IDENTIFIED BY 'Icube328!';<br>
@@ -33,4 +41,6 @@ exit<br>
 1. Update variable on install-magento.sh
 Then run:
  - ./install-magento.sh
+ - Test your web from browser http://<your_url>
+ - Or you can test using curl http://<your_url>/ (before run this make sure you has edited /etc/hosts and create your server_name)
   
