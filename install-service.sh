@@ -18,7 +18,7 @@ echo "=============================================
 ============================================="
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 yum-config-manager --enable remi-php71
-yum install php-fpm php-mcrypt php-curl php-cli php-mysql php-gd php-xsl php-json php-intl php-pear php-devel php-mbstring php-zip php-soap -y
+yum install php-fpm php-mcrypt php-curl php-cli php-bcmath php-mysql php-gd php-xsl php-json php-intl php-pear php-devel php-mbstring php-zip php-soap -y
 mkdir ../tmp
 cd ../tmp
 wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
