@@ -63,7 +63,7 @@ yum install http://repo.percona.com/centos/7/RPMS/x86_64/Percona-Server-server-5
 echo "=============================================
 - Please manually set password for root user -
 - Using mysql -u root -p 
-- ALTER USER 'root'@'localhost' IDENTIFY BY 'Your_New_Password';
+- ALTER USER 'root'@'localhost' IDENTIFIED BY 'Your_New_Password';
 - FLUSH PRIVILLAGES;
 Your temporary password at here:
 ============================================="
