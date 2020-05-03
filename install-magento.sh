@@ -11,7 +11,6 @@ MG_PASS="kawanlama123!"
 echo "=============================================
 -------------- Install Magento --------------
 ============================================="
-su icube
 cd /var/public/releases/
 git clone https://github.com/AndyCungkrinx/magento2.git
 cd magento2
@@ -40,5 +39,6 @@ bin/magento setup:install \
  --timezone=Asia/Bangkok \
  --use-rewrites=1
 
+chown icube:icube /var/public/ -R
 chmod 777 var/ pub/ generated/ -R
 exit
