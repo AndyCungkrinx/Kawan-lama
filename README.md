@@ -29,6 +29,7 @@ FLUSH PRIVILEGES;<br>
 exit<br>
 
 # Next Step
+1. Update variable on install-magento.sh
+Then run:
  - ./install-magento.sh
- - 
   
