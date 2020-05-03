@@ -1,7 +1,7 @@
 # Kawan-lama
 This repo for config server KL
 
-#How to Use
+<h3>How to Use</h3>
 1. useradd icube
 2. passwd icube (make sure remember the password and you can make this same for another server).
 3. usermod -aG wheel icube
@@ -14,7 +14,7 @@ This repo for config server KL
  - ./install-service.sh
  - ./clone-config.sh
  
-#Install Magento
+<h3>Install Magento</h3>
 mysql -u root -p
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'Icube328!';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' IDENTIFIED BY 'Icube328!';
@@ -28,7 +28,7 @@ GRANT ALL PRIVILEGES ON magento2.* TO 'icube'@'127.0.0.1' IDENTIFIED BY 'Icube12
 FLUSH PRIVILEGES;
 exit
 
-#Next Step
+<h3>Next Step</h3>
  - ./install-magento.sh
  - 
   
