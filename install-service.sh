@@ -58,14 +58,14 @@ chmod +x /usr/bin/composer
 echo "=============================================
 --------------- Install MYSQL ---------------
 ============================================="
-yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
-yum makecache fast
-yum install -y Percona-XtraDB-Cluster-57
-systemctl enable --now mysql.service
+yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm -y
+yum install http://repo.percona.com/centos/7/RPMS/x86_64/Percona-Server-server-57-5.7.29-32.1.el7.x86_64.rpm -y
 
 echo "=============================================
 - Please manually set password for root user -
 - Using mysql -u root -p 
-- Temporary password at here:
+- ALTER USER 'root'@'localhost' IDENTIFY BY 'Your_New_Password';
+- FLUSH PRIVILLAGES;
+Your temporary password at here:
 ============================================="
 grep 'temporary password' /var/log/mysqld.log
