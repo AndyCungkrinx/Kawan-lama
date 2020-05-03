@@ -1,5 +1,6 @@
 #!/bin/bash
 #variable default
+#update this
 SERVER_NAME="http://local.magento2.test"
 DB_HOST="127.0.0.1"
 DB_NAME="m2_webapp"
