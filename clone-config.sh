@@ -58,3 +58,12 @@ cp devsite/php-fpm.d/icube.conf /etc/php-fpm.d/
 rm -rf /etc/php-fpm.conf
 cp devsite/php-fpm.conf /etc/php-fpm.conf
 systemctl restart php-fpm
+
+echo "=============================================
+-------------- Magento Path  ----------------
+============================================="
+mkdir /var/public
+mkdir /var/public/releases
+chown icube:icube /var/public/ -R
+chmod 775 /var/public/ -R
+
