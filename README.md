@@ -19,8 +19,8 @@ This repo for config server KL
  - Edit /etc/nginx/conf.d/fastcgi-fpm.conf (comment line HTTPS for disable https if only use http)
 
 # Configure MYSQL Client
-- Edit /home/root/.my.cnf
-- Edit /home/icube/.my.cnf
+- Edit ~/.my.cnf (as root user)
+- Edit /home/icube/.my.cnf (as icube user)
 - Edit /etc/nginx/sites-enabled/varnish.conf
 
 For MYSQL make sure set host 127.0.0.1 if you run DB in same server (for security reason).
