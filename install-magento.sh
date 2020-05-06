@@ -39,6 +39,6 @@ bin/magento setup:install \
  --currency=IDR \
  --timezone=Asia/Bangkok \
  --use-rewrites=1
-
+bin/magento setup:config:set --http-cache-hosts=127.0.0.1:80
 chown icube:icube /var/public/ -R
 exit
