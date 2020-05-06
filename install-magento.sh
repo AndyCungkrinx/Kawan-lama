@@ -40,5 +40,6 @@ bin/magento setup:install \
  --timezone=Asia/Bangkok \
  --use-rewrites=1
 bin/magento setup:config:set --http-cache-hosts=127.0.0.1:80
+bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=0
 chown icube:icube /var/public/ -R
 exit
