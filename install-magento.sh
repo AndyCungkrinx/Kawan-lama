@@ -18,7 +18,7 @@ cd magento2
 git checkout 2.2
 chmod u+x bin/magento
 composer install
-ln -s /var/public/releases /var/public/current
+ln -s /var/public/releases/magento2 /var/public/current
 chown icube:icube /var/public/ -R
 
 #magento config
